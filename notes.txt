@@ -1,0 +1,37 @@
+sxsw hackathon
+
+FBF58442-FE1C-47A6-B3F6-703F3B4A9020
+
+light up LEDs for corresponding keys as progress thru sheet music
+
+whats the target audience?
+people who can’t read sheet music
+
+need sequences bc can specify timing
+
+each track typically contains the notes that a single instrument would play
+
+The embedded raw MIDI message can be set only when constructing the MidiEvent
+
+need transmitter and receiver objects
+
+so i need to turn a song into a Track
+
+the keyboard is a sequencer
+
+midichannel?
+
+MidiSystem
+can translate MIDI file to Sequence
+ A MIDI input port transmits data from an external device to a Java Sound API Receiver, and likewise a MIDI output port receives data from a software object and relays the data to an external device
+
+how do i obtain the keyboard device?
+get info object, then
+static MidiDevice getMidiDevice(MidiDevice.Info info)
+make sure its suitable
+access & reserve device by opening, then connect to other device to share data
+
+the time stamp on a message sent to a device's Receiver object always measures absolute time in microseconds. specifically, it measures the number of microseconds elapsed since the device that owns the receiver was opened
+check if device supports time stamps
+
+carl.bussey@native-instruments.de
